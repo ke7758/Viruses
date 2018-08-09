@@ -3,9 +3,9 @@ const LoginUsers = [
   {
     id: 1,
     username: 'admin',
-    password: '123456',
-    avatar: 'https://raw.githubusercontent.com/taylorchen709/markdown-images/master/vueadmin/user.png',
-    name: '张某某'
+    password: '11223344',
+    avatar: 'https://avatars1.githubusercontent.com/u/37663416?s=460&v=4',
+    name: 'hans'
   }
 ];
 
