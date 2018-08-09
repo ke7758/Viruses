@@ -9,7 +9,7 @@ function resolve(dir) {
 
 module.exports = {
   entry: {
-    app: './src/client/index.js'
+    app: './src/main.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -22,7 +22,8 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      'scss_vars': '@/styles/vars.scss'
     }
   },
   module: {
@@ -35,12 +36,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        // query: { presets: ['es2015'] }
         include: [resolve('src'), resolve('test')]
-      }, {
-        test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
