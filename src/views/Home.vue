@@ -11,7 +11,8 @@
 			</el-col>
 			<el-col :span="4" class="userinfo">
 				<el-dropdown trigger="hover">
-					<span class="el-dropdown-link userinfo-inner"><img :src="this.sysUserAvatar" /> {{sysUserName}}</span>
+					<span class="el-dropdown-link userinfo-inner"> 您好！ {{sysUserName}}</span>
+					<!-- <img :src="this.sysUserAvatar" /> -->
 					<el-dropdown-menu slot="dropdown">
 						<el-dropdown-item>我的消息</el-dropdown-item>
 						<el-dropdown-item>设置</el-dropdown-item>
@@ -127,10 +128,11 @@
 		},
 		mounted() {
 			var user = sessionStorage.getItem('user');
+			console.log(user)
 			if (user) {
 				user = JSON.parse(user);
-				this.sysUserName = user.name || '';
-				this.sysUserAvatar = user.avatar || '';
+				this.sysUserName = user.nickname || '';
+				// this.sysUserAvatar = user.avatar || '';
 			}
 
 		}

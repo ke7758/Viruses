@@ -21,7 +21,7 @@ router.post('/addUser', (req, res) => {
 	var sql = $sql.user.add;
 	var params = req.body;
 	console.log(params);
-	conn.query(sql, [params.username, params.age], function(err, result) {
+	conn.query(sql, [params.username, params.password, params.nickname], function(err, result) {
 		if (err) {
 			console.log(err);
 		}
@@ -31,11 +31,11 @@ router.post('/addUser', (req, res) => {
 	})
 });
 // 查询用户接口
-router.post('/selectUser', (req, res) => {
+router.get('/selectUser', (req, res) => {
 	var sql = $sql.user.select;
 	var params = req.body;
 	console.log(params);
-	conn.query(sql, [params.date], function(err, result) {
+	conn.query(sql, function(err, result) {
 		if (err) {
 			console.log(err);
 		}
